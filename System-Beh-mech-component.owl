@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/gary/ontologies/2019/9/system-behavior-mech-components"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/gary/ontologies/2019/9/system-behavior-mech-components">
+    <Prefix name="" IRI="http://www.semanticweb.org/gary/ontologies/2019/9/system-behavior-mech-components"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="untitled-ontology-19" IRI="http://www.semanticweb.org/gary/ontologies/2019/9/untitled-ontology-19#"/>
+    <Prefix name="system-behavior-mech-components" IRI="http://www.semanticweb.org/gary/ontologies/2019/9/system-behavior-mech-components#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Annotations
+editor note: May be replaced by a BFO class, as discussed in http://www.jbiomedsem.com/content/4/1/43
+definition editor: Gary Berg-Cross
+definition sources: https://www.systemdynamics.org/assets/conferences/2017/proceed/papers/P1432.pdf</Literal>
+    </Annotation>
+    <Declaration>
+        <ObjectProperty IRI="#hasSystemParticipant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#playsCausalRoleIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interactive_System_components"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#IsPerformsbyMeansOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mechanism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System_Behavior"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRealizedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRole"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasInteractingComponents"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performs"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Mechanism"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isRealizedBy"/>
+                <Class IRI="#Interactive_System_components"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#playsCausalRoleIn"/>
+                <Class IRI="#System_Behavior"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="owl:Thing"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasInteractingComponents"/>
+                <Class IRI="#Interactive_System_components"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#IsPerformsbyMeansOf"/>
+                <Class IRI="#Mechanism"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSystemParticipant"/>
+                <Class IRI="#Interactive_System_components"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasInteractingComponents"/>
+                <Class IRI="#Interactive_System_components"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSubSystem"/>
+                <Class IRI="#SubSystem"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSystemParticipant"/>
+                <Class IRI="#Mechanism"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#performs"/>
+                <Class IRI="#System_Behavior"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System_Behavior"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#IsPerformsbyMeansOf"/>
+                <Class IRI="#Mechanism"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSystemParticipant"/>
+                <Class IRI="#Interactive_System_components"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#System"/>
+        <Class IRI="#System_Behavior"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#playsCausalRoleIn"/>
+        <ObjectProperty IRI="#hasRole"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubSystem"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubSystem"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#System</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rdfs:comment
+Broadly a system is a recognizable unified whole that is bounded in some way to its environment and made up of a collection of items that regularly interact.  Systems are portion of  reality characterized by a structure and relations sufficiently well understood/defined to be the subject of study.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
